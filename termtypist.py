@@ -22,7 +22,6 @@ def main(stdscr):
 
 def startGame(stdscr):
     global input
-    global initTime
 
     input = ''
     stdscr.clear()
@@ -46,8 +45,6 @@ def startGame(stdscr):
         pass
 
 def getCommand(stdscr):
-    global input
-    global initTime
     command = stdscr.getkey()
 
     if command == 'q':
@@ -58,8 +55,6 @@ def getCommand(stdscr):
     #     latestWpm = deque([], 10)
 
 def submitInput(stdscr):
-    global input
-    global initTime
     endTime = time.time()
     wpm = calculateWpm(endTime)
 
@@ -123,6 +118,5 @@ def averageWpm():
 def reloadWindow(stdscr):
     stdscr.clear()
     stdscr.addstr(0, 0, input)
-
 
 wrapper(main)
